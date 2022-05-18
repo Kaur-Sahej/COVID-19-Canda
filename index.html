@@ -1,0 +1,90 @@
+<html lang="en">
+<!--
+Assingment 2
+
+ AUTHOR: Sahej Kaur
+CREATED: March 2, 2022
+UPDATED: March 2, 2022
+-->
+
+<head>
+
+    <meta charset="utf-8">
+    <title>COVID-19 Canada</title>
+    <base href="./">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: arial, sans-serif;
+        } 
+    </style>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="https://www.songho.ca/js/Logger.js"></script>
+    <script src="/js/main.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <h1 id="pageTitle">
+        COVID-19 Canada
+    </h1>
+    <div id="flexmain">
+        <div id="maincol1" class="maincol">
+            Province
+            <br>
+            <select id="comboprov" onchange="onProvincesChange(event)">
+            </select>
+            <br> Date: <span id="date">2022-02-26</span>&nbsp;&nbsp;
+            <img id="buttonprev" src="/image/arrow_left.svg" alt="previous date" class="buttonblock"
+                onclick="prevDate()">
+            <img id="buttonnext" src="/image/arrow_right.svg" alt="next date" class="buttonblock" onclick="nextDate()">
+            <br><br>
+            Confirmed Cases
+            <br>
+            <div id="flexnum">
+                <div id="numcol1" class="numcol">
+                    Daily
+                    <br><span id="numdaily">0</span>
+                </div>
+                <div id="numcol2" class="numcol">
+                    Total
+                    <br><span id="numtotal">0</span>
+                </div>
+            </div><br>
+            <span id="ref">Source: https://health-infobase.canada.ca</span>
+        </div>
+        <div id="maincol2" class="maincol">
+            <canvas id="chartdaily" style="display: block; width: 459px; height: 300px;" width="459" height="300"
+                class="chartjs-render-monitor"></canvas>
+        </div>
+        <div id="maincol3" class="maincol">
+            <canvas id="chartdeath" width="460" height="300" style="display: block; width: 460px; height: 300px;"
+                class="chartjs-render-monitor"></canvas>
+        </div>
+    </div>
+    <div class="fixedhead">
+        <table id="tablecases">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Today Confirmed</th>
+                    <th>Total Confirmed</th>
+                    <th>Today Tested</th>
+                    <th>Total Tested</th>
+                    <th>Today Deaths</th>
+                    <th>Total Deaths</th>
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+</html>
